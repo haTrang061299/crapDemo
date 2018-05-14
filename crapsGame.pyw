@@ -113,23 +113,23 @@ class Craps(QMainWindow) :
             self.startingBank = self.appSettings.value('startingBank', type=int)
         else:
             self.startingBank = startingBankDefault
-            self.appSettings.setValue('startingBank', self.startingBank_)
+            self.appSettings.setValue('startingBank', self.startingBank)
 
         if self.appSettings.contains('maximumBet'):
             self.maximumBet = self.appSettings.value('maximumBet', type=int)
         else:
             self.maximumBet = maxinumBetValueDefault
-            self.appSettings.setValue('maximumBet', self.maximumBet_)
+            self.appSettings.setValue('maximumBet', self.maximumBet)
         if self.appSettings.contains('minumumBet'):
             self.minimumBet = self.appSettings.value('minimumBet', type = int)
         else:
-            self.minimumBet = self.minimumBetDefault
-            self.appSettings.setValue('minimumBet', self.minimumBet_)
+            self.minimumBet = minimumBetValueDefault
+            self.appSettings.setValue('minimumBet', self.minimumBet)
         if self.appSettings.contains('createLogFile'):
             self.createLogFile = self.appSettings.value('createLogFile', type = bool)
         else:
             self.createLogFile = logFilenameDefault
-            self.appSettings.setValue('createLogFile', self.createLogFile_)
+            self.appSettings.setValue('createLogFile', self.createLogFile)
     def rollButtonClickedHandler ( self ):
         self.currentBet = self.bidSpinBox.value()
         winsCount = 0
@@ -266,12 +266,6 @@ class PreferencesDialog(QDialog):
 
         def cancelClickedHandler(self):
             self.close()
-
-
-
-
-
-
 
 if __name__ == "__main__":
     QCoreApplication.setOrganizationName("Trang Software");
